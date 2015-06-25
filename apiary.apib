@@ -17,3 +17,27 @@ Once registered use the following endpoints to get your Access and Refresh token
 * `Authorization URL` https://contacts.callsquad.com/oauth/authorize
 * `Access Token URL` https://contacts.callsquad.com/oauth/access_token
 * `Refresh Token URL` https://contacts.callsquad.com/oauth/access_token
+
+
+## Campaigns [/campaigns]
+
+### List all Campaigns [GET]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+    + Body
+    
+	        [
+	            {
+	            	"campaignId" : "53ab2290c55bdbacf7984d9f"
+	            	"name" : "Campaign Name"
+	            },{
+	            	"campaignId" : "53ab2290c55bdbacf7984d9f"
+	            	"name" : "Another Campaign Name"
+	            }
+	        ]
