@@ -1,0 +1,19 @@
+FORMAT: 1A
+HOST: https://contacts.callsquad.com/api/v1
+
+# CallSquad Contacts
+Welcome to the CallSquad Contacts DRAFT API v1 developer documentation! 
+
+Please note this documentation is a Work In Progress and the API isn't feature complete. We'll be adding extra functionality over time.
+
+## Authentication
+
+![OAuth 2.0](http://oauth.net/images/oauth-2-sm.png)
+
+The CallSquad Contacts API uses [OAuth 2.0](http://oauth.net/2/) for authentication. You will first need to get an application key from CallSquad. The CallSquad Contacts API uses the Authorization Code flow to get access tokens and refresh tokens. 
+
+Once registered use the following endpoints to get your Access and Refresh tokens using the keys provided in the Jumplead Developer site:
+
+* `Authorization URL` https://contacts.callsquad.com/oauth/authorize
+* `Access Token URL` https://contacts.callsquad.com/oauth/access_token
+* `Refresh Token URL` https://contacts.callsquad.com/oauth/access_token
