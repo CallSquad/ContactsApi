@@ -2,7 +2,7 @@ FORMAT: 1A
 HOST: https://contacts.callsquad.com/api/v1
 
 # CallSquad Contacts
-Welcome to the CallSquad Contacts DRAFT API v1 developer documentation! 
+Welcome to the CallSquad Contacts DRAFT API v1 developer documentation!
 
 Please note this documentation is a Work In Progress and the API isn't feature complete. We'll be adding extra functionality over time.
 
@@ -10,7 +10,7 @@ Please note this documentation is a Work In Progress and the API isn't feature c
 
 ![OAuth 2.0](http://oauth.net/images/oauth-2-sm.png)
 
-The CallSquad Contacts API uses [OAuth 2.0](http://oauth.net/2/) for authentication. You will first need to get an application key from CallSquad. The CallSquad Contacts API uses the Authorization Code flow to get access tokens and refresh tokens. 
+The CallSquad Contacts API uses [OAuth 2.0](http://oauth.net/2/) for authentication. You will first need to get an application key from CallSquad. The CallSquad Contacts API uses the Authorization Code flow to get access tokens and refresh tokens.
 
 Once registered use the following endpoints to get your Access and Refresh tokens using the keys provided by CallSquad:
 
@@ -24,45 +24,45 @@ Once registered use the following endpoints to get your Access and Refresh token
 ### List all Campaigns [GET]
 + Request (application/json)
 
-	+ Headers
+    + Headers
 
-			Authorization: Bearer someRandomAccessToken
+            Authorization: Bearer someRandomAccessToken
 
 + Response 200 (application/json)
 
-	+ Body
+    + Body
 
-			[
-				{
-					"campaignId" : "53ab2290c55bdbacf7984d9f"
-					"name" : "Campaign Name"
-				},
-				{
-					"campaignId" : "53ab2290c55bdbacf7984d9f"
-					"name" : "Another Campaign Name"
-				}
-			]
+            [
+                {
+                    "campaignId" : "53ab2290c55bdbacf7984d9f"
+                    "name" : "Campaign Name"
+                },
+                {
+                    "campaignId" : "53ab2290c55bdbacf7984d9f"
+                    "name" : "Another Campaign Name"
+                }
+            ]
 
 ## Contacts [/Contacts]
 
 ### List all Contacts for Campaign [GET]
 + Request (application/json)
 
-	+ Headers
+    + Headers
 
-			Authorization: Bearer someRandomAccessToken
+            Authorization: Bearer someRandomAccessToken
 
 + Response 200 (application/json)
 
-	+ Body
+    + Body
 
-			[
-				{
-					"campaignId" : "53ab2290c55bdbacf7984d9f"
-					"name" : "Campaign Name"
-				},
-				{
-					"campaignId" : "53ab2290c55bdbacf7984d9f"
-					"name" : "Another Campaign Name"
-				}
-			]
+            [
+                {
+                    "campaignId" : "53ab2290c55bdbacf7984d9f"
+                    "name" : "Campaign Name"
+                },
+                {
+                    "campaignId" : "53ab2290c55bdbacf7984d9f"
+                    "name" : "Another Campaign Name"
+                }
+            ]
