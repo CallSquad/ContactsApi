@@ -24,20 +24,45 @@ Once registered use the following endpoints to get your Access and Refresh token
 ### List all Campaigns [GET]
 + Request (application/json)
 
-    + Headers
-    
-            Authorization: Bearer someRandomAccessToken
+	+ Headers
+
+			Authorization: Bearer someRandomAccessToken
 
 + Response 200 (application/json)
 
-    + Body
-    
-	        [
-	            {
-	            	"campaignId" : "53ab2290c55bdbacf7984d9f"
-	            	"name" : "Campaign Name"
-	            },{
-	            	"campaignId" : "53ab2290c55bdbacf7984d9f"
-	            	"name" : "Another Campaign Name"
-	            }
-	        ]
+	+ Body
+
+			[
+				{
+					"campaignId" : "53ab2290c55bdbacf7984d9f"
+					"name" : "Campaign Name"
+				},
+				{
+					"campaignId" : "53ab2290c55bdbacf7984d9f"
+					"name" : "Another Campaign Name"
+				}
+			]
+
+## Contacts [/Contacts]
+
+### List all Contacts for Campaign [GET]
++ Request (application/json)
+
+	+ Headers
+
+			Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+	+ Body
+
+			[
+				{
+					"campaignId" : "53ab2290c55bdbacf7984d9f"
+					"name" : "Campaign Name"
+				},
+				{
+					"campaignId" : "53ab2290c55bdbacf7984d9f"
+					"name" : "Another Campaign Name"
+				}
+			]
