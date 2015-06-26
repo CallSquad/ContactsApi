@@ -110,6 +110,7 @@ The number of contacts are returned is limited to 1000 per page.
             }
 
 ### Add contacts to a campaign [POST]
+Your userRef must be unique accross all campaigns, this is an optional field.
 
 + Request (application/json)
 
@@ -121,7 +122,7 @@ The number of contacts are returned is limited to 1000 per page.
 
             [
                 {
-                    "userRef" : "youruserid",
+                    "userRef" : "youruserid1",
                     "firstName": "Jane",
                     "lastName": "Doe",
                     "phoneCountryCode": "GB",
@@ -132,7 +133,7 @@ The number of contacts are returned is limited to 1000 per page.
                     "email": "me@email.com"
                 },
                 {
-                    "userRef" : "youruserid",
+                    "userRef" : "youruserid2",
                     "firstName": "John",
                     "lastName": "Doe",
                     "phoneCountryCode": "GB",
@@ -152,7 +153,7 @@ The number of contacts are returned is limited to 1000 per page.
                 "contacts" : [
                     {
                         "id": "5502c598a6427fe74caa6def",
-                        "userRef" : "youruserid",
+                        "userRef" : "youruserid1",
                         "firstName": "John",
                         "lastName": "Doe",
                         "valid": true,
@@ -168,7 +169,7 @@ The number of contacts are returned is limited to 1000 per page.
                     },
                     {
                         "id": "5502c598a6427fe74caa6def",
-                        "userRef" : "youruserid",
+                        "userRef" : "youruserid2",
                         "firstName": "Jane",
                         "lastName": "Doe",
                         "valid": true,
@@ -184,3 +185,60 @@ The number of contacts are returned is limited to 1000 per page.
                     }
                 ]
             }
+
+## Contact [/Contacts/{campaignId}/{id,userRef}]
+You need to specify either the id or the userRef for a contact
+
++ Parameters
+    + campaignId (required, string, `53ab2290c55bdbacf7984d9e`) ... The ID of the campaign.
+    + id (optional, string, `5502c598a6427fe74caa6def`) ... The ID of the contact from callsquad.
+    + userRef (optional, string, `youruserid2`) ... The userRef you gave the contact.
+
+
+### Get Contact [GET]
+
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "5502c598a6427fe74caa6def",
+                "userRef" : "youruserid",
+                "firstName": "Jane",
+                "lastName": "Doe",
+                "valid": true,
+                "phoneCountryCode": "GB",
+                "phoneNumber": "07891011122",
+                "timezone": "Europe/London",
+                "jobTitle": "regional manager",
+                "company": "SkyPower",
+                "callCount": 1,
+                "lastContacted": "2015-03-13T11:10:16.981Z",
+                "lastOutcome": 7,
+                "email": "me@email.com"
+            }
+
+### Get Contact [DELETE]
+
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "message": "Delete sucessful"
+            }
+
