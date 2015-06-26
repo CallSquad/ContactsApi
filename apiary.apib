@@ -186,12 +186,65 @@ Your userRef must be unique accross all campaigns, this is an optional field.
                 ]
             }
 
-## Contact [/Contacts/{campaignId}/{id,userRef}]
+## Contact by ID [/Contacts/{campaignId}/id/{id}]
 You need to specify either the id or the userRef for a contact
 
 + Parameters
     + campaignId (required, string, `53ab2290c55bdbacf7984d9e`) ... The ID of the campaign.
     + id (optional, string, `5502c598a6427fe74caa6def`) ... The ID of the contact from callsquad.
+
+
+### Get Contact [GET]
+
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "5502c598a6427fe74caa6def",
+                "userRef" : "youruserid",
+                "firstName": "Jane",
+                "lastName": "Doe",
+                "valid": true,
+                "phoneCountryCode": "GB",
+                "phoneNumber": "07891011122",
+                "timezone": "Europe/London",
+                "jobTitle": "regional manager",
+                "company": "SkyPower",
+                "callCount": 1,
+                "lastContacted": "2015-03-13T11:10:16.981Z",
+                "lastOutcome": 7,
+                "email": "me@email.com"
+            }
+
+### Delete Contact [DELETE]
+
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer someRandomAccessToken
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "message": "Delete sucessful"
+            }
+## Contact by userRef [/Contacts/{campaignId}/userRef/{userRef}]
+You need to specify either the id or the userRef for a contact
+
++ Parameters
+    + campaignId (required, string, `53ab2290c55bdbacf7984d9e`) ... The ID of the campaign.
     + userRef (optional, string, `youruserid2`) ... The userRef you gave the contact.
 
 
@@ -225,7 +278,7 @@ You need to specify either the id or the userRef for a contact
                 "email": "me@email.com"
             }
 
-### Get Contact [DELETE]
+### Delete Contact [DELETE]
 
 
 + Request (application/json)
