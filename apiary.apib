@@ -49,6 +49,9 @@ Once registered use the following endpoints to get your Access and Refresh token
     + campaignId (required, string, `53ab2290c55bdbacf7984d9e`) ... The ID of the campaign.
 
 ### List all Contacts for Campaign [GET]
+
+The number of contacts are returned is limited to 1000 per page.
+
 + Request (application/json)
 
     + Headers
@@ -59,35 +62,47 @@ Once registered use the following endpoints to get your Access and Refresh token
 
     + Body
 
-            [
-                {
-                    id: "5502c598a6427fe74caa6def",
-                    firstName: "John",
-                    lastName: "Doe",
-                    valid: true,
-                    phoneCountryCode: "GB",
-                    phoneNumber: "07891011121",
-                    timezone: "Europe/London",
-                    jobTitle: "regional manager",
-                    company: "SkyPower",
-                    callCount: 0,
-                    lastContacted: null,
-                    lastOutcome: null,
-                    email: "me@email.com"
-                },
-                {
-                    id: "5502c598a6427fe74caa6def",
-                    firstName: "Jane",
-                    lastName: "Doe",
-                    valid: true,
-                    phoneCountryCode: "GB",
-                    phoneNumber: "07891011122",
-                    timezone: "Europe/London",
-                    jobTitle: "regional manager",
-                    company: "SkyPower",
-                    callCount: 1,
-                    lastContacted: "2015-03-13T11:10:16.981Z",
-                    lastOutcome: 7,
-                    email: "me@email.com"
+            {
+                "contacts" : [
+                    {
+                        "id": "5502c598a6427fe74caa6def",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "valid": true,
+                        "phoneCountryCode": "GB",
+                        "phoneNumber": "07891011121",
+                        "timezone": "Europe/London",
+                        "jobTitle": "regional manager",
+                        "company": "SkyPower",
+                        "callCount": 0,
+                        "lastContacted": null,
+                        "lastOutcome": null,
+                        "email": "me@email.com"
+                    },
+                    {
+                        "id": "5502c598a6427fe74caa6def",
+                        "firstName": "Jane",
+                        "lastName": "Doe",
+                        "valid": true,
+                        "phoneCountryCode": "GB",
+                        "phoneNumber": "07891011122",
+                        "timezone": "Europe/London",
+                        "jobTitle": "regional manager",
+                        "company": "SkyPower",
+                        "callCount": 1,
+                        "lastContacted": "2015-03-13T11:10:16.981Z",
+                        "lastOutcome": 7,
+                        "email": "me@email.com"
+                    }
+                ],
+                "pagination": {
+                    "total": 2,
+                    "count": 2,
+                    "per_page": 1000,
+                    "current_page": 1,
+                    "total_pages": 1,
+                    "links": {
+                        "next": "https:\/\/contacts.callsquad.com\/api\/v1\/contacts\/53ab2290c55bdbacf7984d9e\/?page=2"
+                    }
                 }
-            ]
+            }
