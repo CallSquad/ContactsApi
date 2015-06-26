@@ -1,10 +1,10 @@
 FORMAT: 1A
-HOST: https://contacts.callsquad.com/api/v1
+
 
 # CallSquad Contacts
 Welcome to the CallSquad Contacts DRAFT API v1 developer documentation!
 
-Please note this documentation is a Work In Progress and the API isn't feature complete. We'll be adding extra functionality over time.
+Please note this documentation is a Work In Progress and the API isn't complete.
 
 ## Authentication
 
@@ -66,6 +66,7 @@ The number of contacts are returned is limited to 1000 per page.
                 "contacts" : [
                     {
                         "id": "5502c598a6427fe74caa6def",
+                        "userRef" : "youruserid",
                         "firstName": "John",
                         "lastName": "Doe",
                         "valid": true,
@@ -81,6 +82,7 @@ The number of contacts are returned is limited to 1000 per page.
                     },
                     {
                         "id": "5502c598a6427fe74caa6def",
+                        "userRef" : "youruserid",
                         "firstName": "Jane",
                         "lastName": "Doe",
                         "valid": true,
@@ -105,4 +107,80 @@ The number of contacts are returned is limited to 1000 per page.
                         "next": "https:\/\/contacts.callsquad.com\/api\/v1\/contacts\/53ab2290c55bdbacf7984d9e\/?page=2"
                     }
                 }
+            }
+
+### Add contacts to a campaign [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer someRandomAccessToken
+
+    + Body
+
+            [
+                {
+                    "userRef" : "youruserid",
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                    "phoneCountryCode": "GB",
+                    "phoneNumber": "07891011122",
+                    "timezone": "Europe/London",
+                    "jobTitle": "regional manager",
+                    "company": "SkyPower",
+                    "email": "me@email.com"
+                },
+                {
+                    "userRef" : "youruserid",
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "phoneCountryCode": "GB",
+                    "phoneNumber": "07891011121",
+                    "timezone": "Europe/London",
+                    "jobTitle": "regional manager",
+                    "company": "SkyPower",
+                    "email": "me@email.com"
+                }
+            ]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "contacts" : [
+                    {
+                        "id": "5502c598a6427fe74caa6def",
+                        "userRef" : "youruserid",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "valid": true,
+                        "phoneCountryCode": "GB",
+                        "phoneNumber": "07891011121",
+                        "timezone": "Europe/London",
+                        "jobTitle": "regional manager",
+                        "company": "SkyPower",
+                        "callCount": 0,
+                        "lastContacted": null,
+                        "lastOutcome": null,
+                        "email": "me@email.com"
+                    },
+                    {
+                        "id": "5502c598a6427fe74caa6def",
+                        "userRef" : "youruserid",
+                        "firstName": "Jane",
+                        "lastName": "Doe",
+                        "valid": true,
+                        "phoneCountryCode": "GB",
+                        "phoneNumber": "07891011122",
+                        "timezone": "Europe/London",
+                        "jobTitle": "regional manager",
+                        "company": "SkyPower",
+                        "callCount": 1,
+                        "lastContacted": "2015-03-13T11:10:16.981Z",
+                        "lastOutcome": 7,
+                        "email": "me@email.com"
+                    }
+                ]
             }
