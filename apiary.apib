@@ -187,7 +187,8 @@ Your userRef must be unique accross all campaigns, this is an optional field.
             }
 
 ## Contact by ID [/Contact/id/{id}]
-You need to specify either the id or the userRef for a contact
+
+Access a contact using a CallSquad id.
 
 + Parameters
     + id (required, string, `5502c598a6427fe74caa6def`) ... The ID of the contact from callsquad.
@@ -240,7 +241,7 @@ You need to specify either the id or the userRef for a contact
                 "message": "Delete sucessful"
             }
 ## Contact by userRef [/Contacts/userRef/{userRef}]
-You need to specify either the id or the userRef for a contact
+Access a contact using a your userRef.
 
 + Parameters
     + userRef (required, string, `youruserid2`) ... The userRef you gave the contact.
